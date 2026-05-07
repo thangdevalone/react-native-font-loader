@@ -1,0 +1,26 @@
+# Deps
+node_modules/
+
+# Build
+lib/
+
+# Android
+android/build/
+android/.gradle/
+
+# iOS
+ios/build/
+ios/Pods/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+*.log
+*.tgz

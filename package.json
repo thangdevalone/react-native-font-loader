@@ -1,0 +1,97 @@
+{
+  "name": "react-native-font-loader",
+  "version": "1.0.0",
+  "description": "A modern React Native library for dynamic font loading at runtime. Load fonts from base64, file path, or URL with caching, progress tracking, and React hooks.",
+  "main": "lib/commonjs/index",
+  "module": "lib/module/index",
+  "types": "lib/typescript/src/index.d.ts",
+  "react-native": "src/index",
+  "source": "src/index",
+  "files": [
+    "src",
+    "lib",
+    "android",
+    "ios",
+    "*.podspec",
+    "!ios/build",
+    "!android/build",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "scripts": {
+    "typescript": "tsc --noEmit",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "prepare": "bob build",
+    "clean": "del-cli lib",
+    "release": "release-it"
+  },
+  "keywords": [
+    "react-native",
+    "font",
+    "dynamic-font",
+    "font-loader",
+    "custom-font",
+    "runtime-font",
+    "load-font",
+    "ttf",
+    "otf",
+    "ios",
+    "android"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/user/react-native-font-loader.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "homepage": "https://github.com/user/react-native-font-loader#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@release-it/conventional-changelog": "^10.0.0",
+    "@types/react": "^18.0.0",
+    "del-cli": "^5.0.0",
+    "react": "^18.0.0",
+    "react-native": "^0.72.0",
+    "react-native-builder-bob": "^0.23.0",
+    "release-it": "^20.0.1",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": ">=0.71.0"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release ${version}",
+      "tagName": "v${version}"
+    },
+    "npm": {
+      "publish": false
+    },
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular"
+      }
+    }
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  }
+}
