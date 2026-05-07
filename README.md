@@ -1,4 +1,4 @@
-# react-native-font-loader
+# @thangdevalone/react-native-font-loader
 
 A modern React Native library for **dynamic font loading at runtime**. Load fonts from base64, file path, or URL — with caching, progress tracking, and React hooks.
 
@@ -6,7 +6,7 @@ A modern React Native library for **dynamic font loading at runtime**. Load font
 
 ## Features
 
-| Feature | react-native-dynamic-fonts | **react-native-font-loader** |
+| Feature | react-native-dynamic-fonts | **@thangdevalone/react-native-font-loader** |
 |---|---|---|
 | Load from base64 | ✅ | ✅ |
 | Load from file path | ❌ | ✅ |

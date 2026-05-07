@@ -8,6 +8,8 @@
   "react-native": "src/index",
   "source": "src/index",
   "files": [
+    "LICENSE",
+    "README.md",
     "src",
     "lib",
     "android",
