@@ -1,6 +1,6 @@
 {
   "name": "react-native-font-loader",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A modern React Native library for dynamic font loading at runtime. Load fonts from base64, file path, or URL with caching, progress tracking, and React hooks.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -23,8 +23,7 @@
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "prepare": "bob build",
-    "clean": "del-cli lib",
-    "release": "release-it"
+    "clean": "del-cli lib"
   },
   "keywords": [
     "react-native",
@@ -50,35 +49,16 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "@release-it/conventional-changelog": "^10.0.0",
     "@types/react": "^18.0.0",
     "del-cli": "^5.0.0",
     "react": "^18.0.0",
     "react-native": "^0.72.0",
     "react-native-builder-bob": "^0.23.0",
-    "release-it": "^20.0.1",
     "typescript": "^5.0.0"
   },
   "peerDependencies": {
     "react": "*",
     "react-native": ">=0.71.0"
-  },
-  "release-it": {
-    "git": {
-      "commitMessage": "chore: release ${version}",
-      "tagName": "v${version}"
-    },
-    "npm": {
-      "publish": false
-    },
-    "github": {
-      "release": true
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "preset": "angular"
-      }
-    }
   },
   "react-native-builder-bob": {
     "source": "src",
