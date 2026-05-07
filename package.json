@@ -1,6 +1,6 @@
 {
   "name": "@thangdevalone/react-native-font-loader",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A modern React Native library for dynamic font loading at runtime. Load fonts from base64, file path, or URL with caching, progress tracking, and React hooks.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
