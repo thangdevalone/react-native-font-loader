@@ -1,6 +1,6 @@
 {
-  "name": "react-native-font-loader",
-  "version": "1.0.0",
+  "name": "@thangdevalone/react-native-font-loader",
+  "version": "1.1.0",
   "description": "A modern React Native library for dynamic font loading at runtime. Load fonts from base64, file path, or URL with caching, progress tracking, and React hooks.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -40,11 +40,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/user/react-native-font-loader.git"
+    "url": "git+https://github.com/thangdevalone/react-native-font-loader.git"
   },
-  "author": "",
+  "author": "ThangDev <thangdevalone@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/user/react-native-font-loader#readme",
+  "homepage": "https://github.com/thangdevalone/react-native-font-loader#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
