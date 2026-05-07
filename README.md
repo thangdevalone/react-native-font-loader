@@ -25,10 +25,10 @@ A modern React Native library for **dynamic font loading at runtime**. Load font
 
 ```bash
 # npm
-npm install react-native-font-loader
+npm install @thangdevalone/react-native-font-loader
 
 # yarn
-yarn add react-native-font-loader
+yarn add @thangdevalone/react-native-font-loader
 ```
 
 ### iOS
@@ -46,7 +46,7 @@ No additional setup required — the library auto-links.
 ### Load a font from URL
 
 ```tsx
-import { loadFont } from 'react-native-font-loader';
+import { loadFont } from '@thangdevalone/react-native-font-loader';
 
 // Source type is auto-detected (base64, file, or URL)
 const result = await loadFont({
@@ -61,7 +61,7 @@ const result = await loadFont({
 ### Load from base64
 
 ```tsx
-import { loadFontFromBase64 } from 'react-native-font-loader';
+import { loadFontFromBase64 } from '@thangdevalone/react-native-font-loader';
 
 const result = await loadFontFromBase64('MyFont', base64String, 'ttf');
 ```
@@ -69,7 +69,7 @@ const result = await loadFontFromBase64('MyFont', base64String, 'ttf');
 ### Load from file
 
 ```tsx
-import { loadFontFromFile } from 'react-native-font-loader';
+import { loadFontFromFile } from '@thangdevalone/react-native-font-loader';
 
 const result = await loadFontFromFile('MyFont', '/path/to/font.ttf');
 ```
@@ -79,7 +79,7 @@ const result = await loadFontFromFile('MyFont', '/path/to/font.ttf');
 #### `useFont` — Single font
 
 ```tsx
-import { useFont } from 'react-native-font-loader';
+import { useFont } from '@thangdevalone/react-native-font-loader';
 
 function MyComponent() {
   const { loaded, error, fontFamily } = useFont({
@@ -97,7 +97,7 @@ function MyComponent() {
 #### `useFonts` — Multiple fonts with progress
 
 ```tsx
-import { useFonts } from 'react-native-font-loader';
+import { useFonts } from '@thangdevalone/react-native-font-loader';
 
 function App() {
   const { loaded, progress, fontFamilies } = useFonts([
