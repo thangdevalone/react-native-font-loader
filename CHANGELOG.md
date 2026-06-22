@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/thangdevalone/react-native-font-loader/compare/v1.1.0...v1.1.1) (2026-06-22)
+
+
+### Bug Fixes
+
+* resolve stale font cache on OTA updates for iOS and Android ([4939bae](https://github.com/thangdevalone/react-native-font-loader/commit/4939bae7031d7b4442437fcb605e757a031fff8a))
+
 ## [1.1.0](https://github.com/thangdevalone/react-native-font-loader/compare/v1.0.1...v1.1.0) (2026-05-07)
 
 
