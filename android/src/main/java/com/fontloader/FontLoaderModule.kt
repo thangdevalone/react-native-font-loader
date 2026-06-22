@@ -22,6 +22,11 @@ class FontLoaderModule(private val reactContext: ReactApplicationContext) :
 
     override fun getName(): String = NAME
 
+    override fun invalidate() {
+        loadedFonts.clear()
+        super.invalidate()
+    }
+
     // =========================================================================
     // Synchronous methods
     // =========================================================================

@@ -9,6 +9,10 @@ static NSMutableDictionary<NSString *, NSString *> *loadedFonts;
 
 RCT_EXPORT_MODULE()
 
+- (void)invalidate {
+    [loadedFonts removeAllObjects];
+}
+
 + (void)initialize {
     if (self == [FontLoader class]) {
         loadedFonts = [NSMutableDictionary new];
@@ -296,13 +300,25 @@ RCT_EXPORT_METHOD(getFontInfo:(NSString *)filePath
             NSString *errorMessage = (__bridge_transfer NSString *)errorDesc;
             CFRelease(error);
 
-            // Check if already registered — treat as success
+            // Check if already registered — unregister old font and retry for OTA updates
             if ([errorMessage containsString:@"already registered"]) {
-                // Get the PostScript name
                 CTFontRef ctFont = CTFontCreateWithGraphicsFont(cgFont, 0, NULL, NULL);
                 NSString *postScriptName = (__bridge_transfer NSString *)CTFontCopyPostScriptName(ctFont);
                 NSString *familyName = (__bridge_transfer NSString *)CTFontCopyFamilyName(ctFont);
                 CFRelease(ctFont);
+                
+                if (postScriptName) {
+                    CGFontRef existingFontRef = CGFontCreateWithFontName((__bridge CFStringRef)postScriptName);
+                    if (existingFontRef) {
+                        CTFontManagerUnregisterGraphicsFont(existingFontRef, NULL);
+                        CGFontRelease(existingFontRef);
+                        
+                        // Retry registration with new font data
+                        CFErrorRef retryError = NULL;
+                        CTFontManagerRegisterGraphicsFont(cgFont, &retryError);
+                        if (retryError) CFRelease(retryError);
+                    }
+                }
                 CGFontRelease(cgFont);
 
                 loadedFonts[name] = postScriptName ?: name;
